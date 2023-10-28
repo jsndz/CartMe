@@ -9,7 +9,7 @@ export default function Product(props) {
           <span className="badge bg-secondary">₹{props.product.price}</span>
         </h2>
       </div>
-      <div className="col-3">
+      <div className="col-2">
         <div
           className="btn-group"
           role="group"
@@ -38,9 +38,14 @@ export default function Product(props) {
           </button>
         </div>
       </div>
-      <div className="col-3">
+      <div className="col-2">
         ₹{props.product.quantity * props.product.price}
       </div>
+      <button className="col-2 btn btn-danger" onClick={()=>{
+        props.removeItem(props.index);
+      }}>
+        Remove
+      </button>
     </div>
   );
 }
